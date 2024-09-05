@@ -22,7 +22,7 @@
             const number = document.getElementById('number').value;
             const message = encodeURIComponent("Permintaan surat anda ditolak, terimakasih");
             const whatsappUrl = `https://wa.me/${number}?text=${message}`;
-            window.location.href = whatsappUrl;
+            window.open(whatsappUrl, '_blank');
         }
     </script>
 </body>
