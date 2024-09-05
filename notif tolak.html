@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kirim Pesan WhatsApp</title>
+</head>
+<body>
+    <form id="whatsappForm">
+        <label for="number">Nomor Telepon:</label>
+        <input type="text" id="number" name="number" placeholder="6281234567890" required>
+        <button type="submit">Kirim Pesan WhatsApp</button>
+    </form>
+
+    <script>
+        document.getElementById('whatsappForm').addEventListener('submit', function(event) {
+            event.preventDefault();  // Mencegah form dari pengiriman secara default
+            sendMessage();
+        });
+
+        function sendMessage() {
+            const number = document.getElementById('number').value;
+            const message = encodeURIComponent("Permintaan surat anda ditolak, terimakasih");
+            const whatsappUrl = `https://wa.me/${number}?text=${message}`;
+            window.location.href = whatsappUrl;
+        }
+    </script>
+</body>
+</html>
